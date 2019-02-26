@@ -1,0 +1,58 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Converting multiple columns to categories
+
+Most of my use cases are best served by just specifying the types using the `dtype` argument to [`pandas.read_csv`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html).
+
+via [Python Pandas - Changing some column types to categories](https://stackoverflow.com/questions/28910851/python-pandas-changing-some-column-types-to-categories)
+
+```{python}
+import pandas as pd
+
+from io import StringIO
+```
+
+```{python}
+# Create some toy data
+csv_s = """col1,col2,col3,col4
+foo,1,3,wat
+bar,1,4,what
+baz,2,5,wat
+foo,3,9,wat
+bar,4,6,wat
+foo,1,0,what
+"""
+
+f = StringIO(csv_s)
+```
+
+Specify that some of our columns are categorical data when loading.
+
+```{python}
+dtype = {
+    'col1': 'category',
+    'col4': 'category',
+}
+df = pd.read_csv(f, dtype=dtype)
+```
+
+```{python}
+df.dtypes
+```
+
+```{python}
+
+```

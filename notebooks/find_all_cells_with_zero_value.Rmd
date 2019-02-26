@@ -1,0 +1,59 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Find all cells with zero values
+
+```{python}
+import pandas as pd
+```
+
+```{python}
+# Make some toy data
+
+data = [
+    (0, 200, 350),
+    (450, 900, 1340),
+    (450, 0, 0), 
+]
+columns = [2008, 2010, 2012]
+
+df = pd.DataFrame.from_records(data, columns=columns)
+
+df
+```
+
+Just comparing the `DataFrame` to value you're testing will return a binary mask.
+
+```{python}
+df == 0
+```
+
+You can use this mask to filter your `DataFrame` and only show matching values.
+
+```{python}
+df[df == 0]
+```
+
+You can also use this in conjunction with `DataFrame.any` to show rows with matching values.
+
+```{python}
+zero_value_row_mask = (df == 0).any(axis=1)
+
+df[zero_value_row_mask]
+```
+
+```{python}
+
+```

@@ -1,0 +1,86 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Parse dates
+
+```{python}
+import io
+
+import pandas as pd
+```
+
+```{python}
+# Create some toy data
+
+chicago_elections_nice_format_csv = """date,election_type
+2019-02-26,Municipal General
+2018-11-06,General
+2018-03-20,Primary
+2017-02-28,Municipal General
+2016-11-08,General
+2016-03-15,Primary
+2015-04-07,Municipal Runoffs
+2015-02-24,Municipal General
+"""
+
+chicago_elections_broken_format_csv = """date,election_type
+000-2-26,Municipal General
+2018-11-06,General
+2018-03-20,Primary
+2017-02-28,Municipal General
+2016-11-08,General
+2016-03-15,Primary
+2015-04-07,Municipal Runoffs
+2015-02-24,Municipal General
+"""
+```
+
+## Using the `parse_dates` argument to `read_csv()`
+
+The [read_csv()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) function has a `parse_dates` argument that lets you specifcy columns to use when parsing dates.
+
+By default, `read_csv()` doesn't parse dates.
+
+```{python}
+chicago_elections = pd.read_csv(io.StringIO(chicago_elections_nice_format_csv))
+
+chicago_elections
+```
+
+```{python}
+chicago_elections.dtypes
+```
+
+However, you can specify columns to parse as dates by specifying the `parse_dates` argument.
+
+```{python}
+chicago_elections = pd.read_csv(
+    io.StringIO(chicago_elections_nice_format_csv),
+    parse_dates=['date',]
+)
+
+chicago_elections.dtypes
+```
+
+If a date is unparseable, `read_csv()` doesn't complain, but the data type for the date column will be `object`. Inspect the values of this column to try to find broken values.
+
+```{python}
+chicago_elections = pd.read_csv(
+    io.StringIO(chicago_elections_broken_format_csv),
+    parse_dates=['date',]
+)
+
+chicago_elections.dtypes
+```

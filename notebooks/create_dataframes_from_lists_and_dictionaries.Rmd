@@ -1,0 +1,91 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Creating DataFrames from lists and dictionaries
+
+via [Creating Pandas DataFrames from Lists and Dictionaries](http://pbpython.com/pandas-list-dict.html)
+
+```{python}
+import pandas as pd
+```
+
+## Rows in tuples
+
+Use `pandas.DataFrame.from_records`.
+
+```{python}
+library_data = [
+    ('Richard M. Daley Branch', '733 N Kedzie Ave, Chicago, IL 60612'),
+    ('West Town Branch', '1625 W Chicago Ave, Chicago, IL 60622'),
+    ('Humboldt Park Branch', '1605 N Troy St, Chicago, IL 60647'),
+    
+]
+library_columns = ['name', 'address']
+
+libraries = pd.DataFrame.from_records(library_data, columns=library_columns)
+
+libraries
+```
+
+## Rows in dictionaries
+
+Just use the `pandas.DataFrame` constructor.
+
+```{python}
+library_data = [
+    {'name': 'Richard M. Daley Branch', 'address': '733 N Kedzie Ave, Chicago, IL 60612'},
+    {'name': 'West Town Branch', 'address': '1625 W Chicago Ave, Chicago, IL 60622'},
+    {'name': 'Humboldt Park Branch', 'address': '1605 N Troy St, Chicago, IL 60647'},
+]
+
+libraries = pd.DataFrame(library_data)
+
+libraries
+```
+
+## Dictionary of columns
+
+Use `pandas.DataFrame.from_dict`.
+
+```{python}
+library_data = {
+    'name': ['Richard M. Daley Branch', 'West Town Branch', 'Humboldt Park Branch'],
+    'address': ['733 N Kedzie Ave, Chicago, IL 60612', '1625 W Chicago Ave, Chicago, IL 60622', '1605 N Troy St, Chicago, IL 60647'],
+}
+
+libraries = pd.DataFrame.from_dict(library_data)
+
+libraries
+```
+
+## List of tuples
+
+Convert list to dict, then use `pandas.DataFrame.from_dict`.
+
+```{python}
+library_data = [
+    ('name', ['Richard M. Daley Branch', 'West Town Branch', 'Humboldt Park Branch']),
+    ('address', ['733 N Kedzie Ave, Chicago, IL 60612', '1625 W Chicago Ave, Chicago, IL 60622', '1605 N Troy St, Chicago, IL 60647']),
+]
+
+# You could use pd.DataFrame.from_dict(OrderedDict(library_data)) to preserve column order.
+libraries = pd.DataFrame.from_dict(dict(library_data))
+
+libraries
+```
+
+```{python}
+
+```

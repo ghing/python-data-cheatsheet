@@ -1,0 +1,40 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+## Count null values in any column
+
+Use `isna()` and `sum()`.
+
+via [How to count the NaN values in a column in Pandas DataFrame](https://stackoverflow.com/questions/26266362/how-to-count-the-nan-values-in-a-column-in-pandas-dataframe)
+
+```{python}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+# Make some toy data
+df = pd.DataFrame({'a':[1,2,np.nan], 'b':[np.nan,1,np.nan]})
+
+df
+```
+
+```{python}
+df.isna().sum()
+```
+
+```{python}
+
+```

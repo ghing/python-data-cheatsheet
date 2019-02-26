@@ -1,0 +1,54 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.1
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Find rows with null values in any column
+
+Use `DataFrame.isnull().any(axis=1)`
+
+via [Python Pandas How to select rows with one or more nulls from a DataFrame without listing columns explicitly? - Stack Overflow](https://stackoverflow.com/questions/14247586/python-pandas-how-to-select-rows-with-one-or-more-nulls-from-a-dataframe-without)
+
+```{python}
+import pandas as pd
+```
+
+```{python}
+# Make some toy data
+
+data = [
+    ('Test Value 1', None),
+    ('Test Value 2', 'Test Value 3'),
+    (None, 'Test Value 4'),
+    
+]
+columns = ['col1', 'col2']
+
+df = pd.DataFrame.from_records(data, columns=columns)
+
+df
+```
+
+```{python}
+# Show rows that have nulls in any column
+df.isnull().any(axis=1)
+```
+
+```{python}
+# You can also use this to index the original DataFrame
+df[df.isnull().any(axis=1)]
+```
+
+```{python}
+
+```
