@@ -26,6 +26,7 @@ blocks_ga = gpd.read_file(
 
 - [Count null values in any column](notebooks/count_null_values_in_any_column.ipynb)
 - [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
+- [Calculate percentages of a group](notebooks/percentages_of_group.ipynb)
 
 ### Length of a DataFrame
 
