@@ -16,12 +16,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Count null values in any column](notebooks/count_null_values_in_any_column.ipynb)
 - [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 - [Calculate percentages of a group](notebooks/percentages_of_group.ipynb)
-
-### Length of a DataFrame
-
-To get the number of rows in a DataFrame, you can use `len(df.index)`.
-
-However, `df.shape[0]` is faster.
+- [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
 
 ### Check if a column exists in a `DataFrame`
 

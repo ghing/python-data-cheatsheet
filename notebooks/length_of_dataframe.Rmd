@@ -1,0 +1,67 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.1.7
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Length of DataFrame
+
+```{python}
+# Setup
+
+import pandas as pd
+```
+
+## Create toy data
+
+```{python}
+new_alderpeople_data = [
+    (1, 'Daniel La Spata'),
+    (16, 'Stephanie Coleman'),    
+    (20, 'Jeannette Taylor'),
+    (22, 'Michael Rodriguez'),
+    (25, 'Byron Sigcho-Lopez'),
+    (31, 'Felix Cardona Jr.'),
+    (33, 'Rossana Rodriguez Sanchez'),
+    (39, 'Sam Nugent'),
+    (40, 'Andre Vasquez'),
+    (45, 'Jim Gardiner'),
+    (47, 'Matt Martin'),
+    (49, 'Maria Hadden'),
+]
+columns = ['ward', 'name']
+
+new_alderpeople = pd.DataFrame.from_records(
+    new_alderpeople_data,
+    columns=columns
+)
+
+new_alderpeople
+```
+
+## Using `len()`
+
+```{python}
+len(new_alderpeople.index)
+```
+
+## Using `.shape`
+
+This is more performant.
+
+```{python}
+new_alderpeople.shape[0]
+```
+
+```{python}
+
+```
