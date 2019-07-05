@@ -2,6 +2,8 @@
 
 Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or weren't obvious in the documentation.
 
+TODO: Break quick inline examples into individual notebooks.
+
 ## Loading and creating data
 
 - [Converting multiple columns to categories](notebooks/converting_multiple_columns_to_categories.ipynb)
