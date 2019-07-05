@@ -1,1 +1,3 @@
+# Hide preogramming environment artifacts
 .ipynb_checkpoints
+*.swp
