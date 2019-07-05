@@ -20,10 +20,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Check if column exists](notebooks/column_exists.ipynb)
 - [Show all columns](notebooks/show_all_columns.ipynb)
 - [Format values in a DataFrame](noteboos/format_values.ipynb)
-
-### List the columns in a DataFrame
-
-I like to use the `DataFrane.dtypes` attribute because it also shows the data type of each column.
+- [List columns](notebooks/list_columns.ipynb)
 
 ## Filtering data
 
