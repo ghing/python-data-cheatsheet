@@ -9,6 +9,7 @@ pandas = "*"
 jupytext = "*"
 seaborn = "*"
 ipython-sql = "*"
+geopandas = "*"
 
 [dev-packages]
 

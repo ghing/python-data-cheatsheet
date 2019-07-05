@@ -9,20 +9,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Parsing date values](notebooks/parse_dates.ipynb)
 - [Querying a SQL database in a Jupyter notebook](notebooks/sql_query_in_jupyter_notebook.ipynb)
 - [Loading a DataFrame into a temporary table of a SQL database](notebooks/sql_temporary_table.ipynb)
-
-### Read Shapefile from zip
-
-```
-import geopandas as gpd
-from zipfile import ZipFile
-
-zipfile_url = "zip://{0}".format(os.path.join(DATA_DIR_SRC, 'tl_2017_13_tabblock10.zip'))
-blocks_ga = gpd.read_file(
-    '/tl_2017_13_tabblock10.shp',
-    vfs=zipfile_url,
-) 
-
-```
+- [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
 
 ## Examining data
 
@@ -244,6 +231,8 @@ df.groupby(['col1','col2']).size()
 ```
 
 ## Jupyter notebooks
+
+- [Hide cells in HTML output of notebook](hide_cells_jupyter_html.ipynb)
 
 ### Render a Python variable in a Markdown cell
 

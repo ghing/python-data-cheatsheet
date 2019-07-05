@@ -1,0 +1,61 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.1.7
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Read a shapefile from a zip file
+
+Shapefiles are often packaged as Zip files since the spatial data is actually contained in multiple files associated with the shapefile. You don't have to unzip the zip file before loading the shapefile using Geopandas.
+
+```{python}
+# Setup
+
+import os
+
+NOTEBOOK_DIR = os.getcwd()
+DATA_DIR = os.path.abspath(os.path.join(NOTEBOOK_DIR, os.pardir, 'data'))
+DATA_DIR_SRC = os.path.join(DATA_DIR, 'src')
+```
+
+## Load the shapefile
+
+Note that you can use the `zipinfo` command to view the contents of a zip file:
+
+```bash
+zipinfo data/src/grand_blvd.zip
+Archive:  data/src/grand_blvd.zip
+Zip file size: 4937 bytes, number of entries: 5
+drwxr-xr-x  2.1 unx        0 bx stor 19-Jul-05 12:08 grand_blvd/
+-rw-r--r--  2.1 unx      371 bX defN 19-Jul-05 12:08 grand_blvd/grand_blvd.dbf
+-rw-r--r--  2.1 unx     5404 bX defN 19-Jul-05 12:08 grand_blvd/grand_blvd.shp
+-rw-r--r--  2.1 unx      108 bX defN 19-Jul-05 12:08 grand_blvd/grand_blvd.shx
+-rw-r--r--  2.1 unx      143 bX defN 19-Jul-05 12:08 grand_blvd/grand_blvd.prj
+5 files, 6026 bytes uncompressed, 4109 bytes compressed:  31.8%
+```
+
+```{python}
+import geopandas as gpd
+from zipfile import ZipFile
+
+zipfile_url = "zip://{0}".format(os.path.join(DATA_DIR_SRC, 'grand_blvd.zip'))
+grand_blvd = gpd.read_file(
+    'grand_blvd/grand_blvd.shp',
+    vfs=zipfile_url,
+)
+
+grand_blvd
+```
+
+```{python}
+
+```
