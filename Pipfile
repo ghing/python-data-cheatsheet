@@ -8,6 +8,7 @@ jupyterlab = "*"
 pandas = "*"
 jupytext = "*"
 seaborn = "*"
+ipython-sql = "*"
 
 [dev-packages]
 

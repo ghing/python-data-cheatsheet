@@ -7,6 +7,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Converting multiple columns to categories](notebooks/converting_multiple_columns_to_categories.ipynb)
 - [Creating DataFrames from lists and dictionaries](notebooks/create_dataframes_from_lists_and_dictionaries.ipynb)
 - [Parsing date values](notebooks/parse_dates.ipynb)
+- [Querying a SQL database in a Jupyter notebook](notebooks/sql_query_in_jupyter_notebook.ipynb)
 
 ### Read Shapefile from zip
 
