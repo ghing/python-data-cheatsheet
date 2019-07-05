@@ -8,6 +8,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Creating DataFrames from lists and dictionaries](notebooks/create_dataframes_from_lists_and_dictionaries.ipynb)
 - [Parsing date values](notebooks/parse_dates.ipynb)
 - [Querying a SQL database in a Jupyter notebook](notebooks/sql_query_in_jupyter_notebook.ipynb)
+- [Loading a DataFrame into a temporary table of a SQL database](notebooks/sql_temporary_table.ipynb)
 
 ### Read Shapefile from zip
 
@@ -51,6 +52,7 @@ if 'A' in df.columns:
 ### Show all columns in a DataFrame
 
 Use the `display.max_columns`
+
 ```
 with pd.option_context('display.max_columns', None):
     display(df)
