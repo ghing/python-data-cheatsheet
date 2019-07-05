@@ -17,19 +17,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 - [Calculate percentages of a group](notebooks/percentages_of_group.ipynb)
 - [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
-
-### Check if a column exists in a `DataFrame`
-
-```
-if 'A' in df:
-    ...
-```
-
-or
-
-```
-if 'A' in df.columns:
-```
+- [Check if column exists](notebooks/column_exists.ipynb)
 
 ### Show all columns in a DataFrame
 
