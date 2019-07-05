@@ -18,15 +18,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Calculate percentages of a group](notebooks/percentages_of_group.ipynb)
 - [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
 - [Check if column exists](notebooks/column_exists.ipynb)
-
-### Show all columns in a DataFrame
-
-Use the `display.max_columns`
-
-```
-with pd.option_context('display.max_columns', None):
-    display(df)
-```
+- [Show all columns](notebooks/show_all_columns.ipynb)
 
 ### Format values in a DataFrame
 

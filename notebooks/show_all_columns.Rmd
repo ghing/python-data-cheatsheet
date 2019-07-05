@@ -1,0 +1,58 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.1.7
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Show all columns
+
+```{python}
+# Setup
+
+import pandas as pd
+```
+
+## Create toy data
+
+```{python}
+# Create toy data
+
+from random import randint
+
+columns = [f'col_{i}' for i in range(30)]
+data = []
+for i in range(5):
+    data.append(tuple(randint(0, 11) for c in columns))
+    
+df = pd.DataFrame.from_records(data, columns=columns)
+```
+
+## By default Pandas truncates the number of columns it displays
+
+```{python}
+df
+```
+
+## You can use the `max_columns` option to show all columns
+
+I prefer to use the `option_context` context manager so I can change this option on a case-by-case basis. Note that inside the context manager block, I have to use `display` to show the DataFrame.
+
+```{python}
+from IPython.display import display
+
+with pd.option_context('display.max_columns', None):
+    display(df)
+```
+
+```{python}
+
+```
