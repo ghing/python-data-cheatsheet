@@ -19,12 +19,7 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 - [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
 - [Check if column exists](notebooks/column_exists.ipynb)
 - [Show all columns](notebooks/show_all_columns.ipynb)
-
-### Format values in a DataFrame
-
-Use `Style.format`.
-
-See the [styling docs](https://pandas.pydata.org/pandas-docs/stable/style.html) especially, [this section](https://pandas.pydata.org/pandas-docs/stable/style.html#Finer-Control:-Display-Values).
+- [Format values in a DataFrame](noteboos/format_values.ipynb)
 
 ### List the columns in a DataFrame
 

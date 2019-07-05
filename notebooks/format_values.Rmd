@@ -1,0 +1,63 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.1.7
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+# Format DataFrame values
+
+See the [styling docs](https://pandas.pydata.org/pandas-docs/stable/style.html) especially, [this section](https://pandas.pydata.org/pandas-docs/stable/style.html#Finer-Control:-Display-Values).
+
+```{python}
+# Setup
+
+import pandas as pd
+```
+
+## Create toy data
+
+```{python}
+# Create toy data
+
+data = [
+    (1000, .624324324),
+    (10000, .91241)
+]
+
+df = pd.DataFrame.from_records(data, columns=['big_number', 'pct'])
+```
+
+## Use `.style.format`
+
+
+By default, Pandas doesn't format numeric values when displaying a DataFrame.
+
+```{python}
+# Show default styling of numbers
+
+df
+```
+
+However you can specify a dictionary mapping column names to [Python format strings](https://pyformat.info).
+
+```{python}
+# Use style.format
+
+df.style.format({
+    'big_number': '{:,}',
+    'pct': '{:.1%}',
+})
+```
+
+```{python}
+
+```
