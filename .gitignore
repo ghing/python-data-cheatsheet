@@ -1,3 +1,9 @@
-# Hide preogramming environment artifacts
+# OS artifacts
+.DS_Store
+
+# Programming environment artifacts
 .ipynb_checkpoints
 *.swp
+
+# Generated data
+data/tmp
