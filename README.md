@@ -12,6 +12,7 @@ TODO: Break quick inline examples into individual notebooks.
 - [Querying a SQL database in a Jupyter notebook](notebooks/sql_query_in_jupyter_notebook.ipynb)
 - [Loading a DataFrame into a temporary table of a SQL database](notebooks/sql_temporary_table.ipynb)
 - [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
+- Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
 
 ## Examining data
 
