@@ -217,3 +217,11 @@ Use the [Python Markdown](http://jupyter-contrib-nbextensions.readthedocs.io/en/
 TODO: Check if this actually works.
 
 via [Get Output From the logging Module in IPython Notebook](https://stackoverflow.com/questions/18786912/get-output-from-the-logging-module-in-ipython-notebook)
+
+## Python environment
+
+### Use a particular Python version with Pipenv
+
+```
+pipenv install --python=/path/to/your/python
+```
