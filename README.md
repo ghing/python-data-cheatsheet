@@ -200,6 +200,10 @@ Use `DataFrame.assign()`
 df.groupby(['col1','col2']).size()
 ```
 
+## Visualizing data
+
+- [Coloring a choropleth based on an explicit color value in a GeoDataFrame](notebooks/color_choropleth_explicitly.ipynb)
+
 ## Jupyter notebooks
 
 - [Hide cells in HTML output of notebook](hide_cells_jupyter_html.ipynb)
