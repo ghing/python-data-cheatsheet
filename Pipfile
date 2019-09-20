@@ -10,6 +10,7 @@ jupytext = "*"
 seaborn = "*"
 ipython-sql = "*"
 geopandas = "*"
+altair = "*"
 
 [dev-packages]
 
