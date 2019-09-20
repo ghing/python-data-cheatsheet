@@ -222,6 +222,24 @@ TODO: Check if this actually works.
 
 via [Get Output From the logging Module in IPython Notebook](https://stackoverflow.com/questions/18786912/get-output-from-the-logging-module-in-ipython-notebook)
 
+### Avoiding having to manually reimport modules when you change code in them.
+
+Use the [autoreload](https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html) extension.
+
+```
+%load_ext autoreload
+
+%autoreload 2
+
+from foo import some_function
+
+some_function()
+
+# open foo.py in an editor and change some_function to return 43
+
+some_function()
+```
+
 ## Python environment
 
 ### Use a particular Python version with Pipenv
