@@ -96,8 +96,9 @@ Out[4]:
 1  12345
 ``` 
 
+## Cleaning, transforming and manipulating data
 
-## Manipulating data
+- [Combine records when information is split across rows](notebooks/combine_record_rows.ipynb)
 
 ### Change types of columns
 
