@@ -44,14 +44,12 @@ s.where(lambda x : x != 1)
 
 ### Filter a DataFrame using a function
 
-Use `DataFrame.apply`.
+You can specify a function inside `[]`:
 
 ```
-df = pandas.DataFrame(np.random.randn(5, 3), columns=['a', 'b', 'c'])
-df[df.apply(lambda x: x['b'] > x['c'], axis=1)]
+df = pd.DataFrame(np.random.randn(5, 3), columns=['a', 'b', 'c'])
+df[lambda x: x['b'] > x['c']]
 ```
-
-via [pandas: complex filter on rows of DataFrame](https://stackoverflow.com/questions/11418192/pandas-complex-filter-on-rows-of-dataframe)
 
 ### Filtering DataFrame based on whether a column's value is in a list
 
