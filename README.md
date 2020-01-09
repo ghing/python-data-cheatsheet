@@ -247,3 +247,11 @@ some_function()
 ```
 pipenv install --python=/path/to/your/python
 ```
+
+### Running a script and dropping to the debugger on an exception
+
+```
+python -m pdb -c continue myscript.py arg1 arg2 
+```
+
+Source: [Starting python debugger automatically on error](https://stackoverflow.com/a/2438834)
