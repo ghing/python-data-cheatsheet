@@ -14,6 +14,16 @@ TODO: Break quick inline examples into individual notebooks.
 - [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
 - Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
 
+### Geocoding addresses
+
+I usually first pass the addresses through the Census Geocoder Batch API and then geocode the addresses that it can't handle using Geocodio. 
+
+Helpful packages:
+
+- [datadesk/python-censusbatchgeocoder: A simple Python wrapper for U.S. Census Geocoding Services API batch service](https://github.com/datadesk/python-censusbatchgeocoder)
+
+I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to run this script. It's a quick and dirty combination of code from a project, but it should provide an idea of how to do this.
+
 ## Examining data
 
 - [Count null values in any column](notebooks/count_null_values_in_any_column.ipynb)
@@ -240,6 +250,10 @@ some_function()
 ```
 
 ## Python environment
+
+### Installing Python in a good way
+
+[My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/) is a good guide. I prefer to use Pipenv instead of Poetry because `pipenv run` automatically sources `.env` files.
 
 ### Use a particular Python version with Pipenv
 
