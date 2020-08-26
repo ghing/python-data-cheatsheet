@@ -268,3 +268,13 @@ python -m pdb -c continue myscript.py arg1 arg2
 ```
 
 Source: [Starting python debugger automatically on error](https://stackoverflow.com/a/2438834)
+
+### Create a kernel for use with Jupyter
+
+This makes it possible to have a single Jupyter Lab installation with separate kernels for the virtualenvs for each project. 
+
+```
+pipenv run python -m ipykernel install --user --name=your-project-slug
+```
+
+Source: [associatedpress/cookiecutter-python-project](https://github.com/associatedpress/cookiecutter-python-project/blob/master/hooks/post_gen_project.sh) 

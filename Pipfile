@@ -4,15 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-jupyterlab = "*"
 pandas = "*"
 jupytext = "*"
 seaborn = "*"
 ipython-sql = "*"
 geopandas = "*"
 altair = "*"
+ipykernel = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
