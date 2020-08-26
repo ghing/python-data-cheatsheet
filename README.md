@@ -109,7 +109,7 @@ Out[4]:
 ## Cleaning, transforming and manipulating data
 
 - [Combine records when information is split across rows](notebooks/combine_record_rows.ipynb)
-- [Split a DataFrame into chunks](notebooks/chunk_data.ipynb)
+- [Split a DataFrame into chunks](notebooks/chunk_dataframe.ipynb)
 
 ### Change types of columns
 
