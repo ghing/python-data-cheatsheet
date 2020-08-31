@@ -5,19 +5,21 @@ jupyter:
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
-      format_version: '1.0'
-      jupytext_version: 1.0.1
+      format_version: '1.2'
+      jupytext_version: 1.5.2
   kernelspec:
-    display_name: Python 3
+    display_name: python-data-cheatsheet
     language: python
-    name: python3
+    name: python-data-cheatsheet
 ---
 
 # Select a single item by index
 
-Select a single item by indexing `DataFrame.log` with an array with just that item.
+Get a DataFrame containing a single item by indexing `DataFrame.loc` with an array with just that item.
 
 Via [Hierarchical Indexing | Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/03.05-hierarchical-indexing.html).
+
+It's a good idea to become familiar with the [Indexing and selecting data](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html) section of the docs as well as the [`DataFrame.loc`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html). There's a lot of useful informaiton there, but how to do specific things.
 
 ```{python}
 import pandas as pd
@@ -27,12 +29,12 @@ import pandas as pd
 # Create some toy data
 
 library_data = [
-    ('Richard M. Daley Branch', '733 N Kedzie Ave, Chicago, IL 60612'),
-    ('West Town Branch', '1625 W Chicago Ave, Chicago, IL 60622'),
-    ('Humboldt Park Branch', '1605 N Troy St, Chicago, IL 60647'),
+    ('Richard M. Daley Branch', '733 N Kedzie Ave, Chicago, IL 60612', 'Humboldt Park'),
+    ('West Town Branch', '1625 W Chicago Ave, Chicago, IL 60622', 'West Town'),
+    ('Humboldt Park Branch', '1605 N Troy St, Chicago, IL 60647', 'Humboldt Park'),
     
 ]
-library_columns = ['name', 'address']
+library_columns = ['name', 'address', 'community_area']
 
 libraries = pd.DataFrame\
     .from_records(library_data, columns=library_columns)\
@@ -41,9 +43,36 @@ libraries = pd.DataFrame\
 libraries
 ```
 
+## Single index
+
+
+Just using `.loc` with the index value returns a series:
+
 ```{python}
-# Select a single item by indexing `DataFrame.log` with an array with just that item.
+# Select a single item
+libraries.loc['Richard M. Daley Branch']
+```
+
+To get a DataFrame with just that item, use `.loc` with a list containing the index value(s):
+
+```{python}
+# Get a DataFrame with a single item by indexing `DataFrame.loc` with an array with just that item.
 libraries.loc[['Richard M. Daley Branch']]
+```
+
+## MultiIndex
+
+```{python}
+# Create a multi-index
+libraries_mi = libraries.reset_index().set_index(['community_area', 'name'])
+
+libraries_mi
+```
+
+With a MultiIndex, the syntax is a little trickier. Use a tuple to select the index values and the `:` to identify that you want all columns.
+
+```{python}
+libraries_mi.loc[[('Humboldt Park', 'Richard M. Daley Branch')], :]
 ```
 
 ```{python}
