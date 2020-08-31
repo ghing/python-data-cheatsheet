@@ -3,21 +3,21 @@ jupyter:
   jupytext:
     formats: ipynb,Rmd
     text_representation:
-      extension: .Rmd
-      format_name: rmarkdown
-      format_version: '1.1'
-      jupytext_version: 1.1.7
+      extension: .md
+      format_name: markdown
+      format_version: '1.2'
+      jupytext_version: 1.5.2
   kernelspec:
-    display_name: Python 3
+    display_name: python-data-cheatsheet
     language: python
-    name: python3
+    name: python-data-cheatsheet
 ---
 
 # Read a shapefile from a zip file
 
 Shapefiles are often packaged as Zip files since the spatial data is actually contained in multiple files associated with the shapefile. You don't have to unzip the zip file before loading the shapefile using Geopandas.
 
-```{python}
+```python
 # Setup
 
 import os
@@ -27,6 +27,7 @@ DATA_DIR = os.path.abspath(os.path.join(NOTEBOOK_DIR, os.pardir, 'data'))
 DATA_DIR_SRC = os.path.join(DATA_DIR, 'src')
 ```
 
+<!-- #region -->
 ## Load the shapefile
 
 Note that you can use the `zipinfo` command to view the contents of a zip file:
@@ -42,8 +43,43 @@ drwxr-xr-x  2.1 unx        0 bx stor 19-Jul-05 12:08 grand_blvd/
 -rw-r--r--  2.1 unx      143 bX defN 19-Jul-05 12:08 grand_blvd/grand_blvd.prj
 5 files, 6026 bytes uncompressed, 4109 bytes compressed:  31.8%
 ```
+<!-- #endregion -->
 
-```{python}
+In newer versions of GeoPandas (which rely on newer versions of [Fiona](https://github.com/Toblerity/Fiona)) you can just specify a specially-formatted path to the zip file.
+
+
+This file lives in `data/src/grand_blvd.zip`, relative to the root directory of this project.
+
+Within the zip file, there is a subdirectory named `grand_blvd`, which contains the shapefile `grand_blvd.shp`.
+
+```python
+!zipinfo ../data/src/grand_blvd.zip
+```
+
+For this scenario, the argument to `gpd.read_file()` would be this:
+
+```python
+zipfile_url = "zip://{0}".format(os.path.join(DATA_DIR_SRC, 'grand_blvd.zip', 'grand_blvd', 'grand_blvd.shp'))
+
+zipfile_url
+```
+
+Note that because the shapefile is in a subdirectory of the zip file, there's a sub-path that appears after the zip file name in this path.
+
+```python
+import geopandas as gpd
+from zipfile import ZipFile
+
+grand_blvd = gpd.read_file(
+    zipfile_url
+)
+
+grand_blvd
+```
+
+With older versions of Geopandas/Fiona, you use the `vfs` keyword argument to specify the path to the zip file that contains the shapefile.
+
+```python
 import geopandas as gpd
 from zipfile import ZipFile
 
@@ -56,6 +92,6 @@ grand_blvd = gpd.read_file(
 grand_blvd
 ```
 
-```{python}
+```python
 
 ```
