@@ -27,7 +27,6 @@ I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to
 ## Examining data
 
 - [Count null values in any column](notebooks/count_null_values_in_any_column.ipynb)
-- [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 - [Calculate percentages of a group](notebooks/percentages_of_group.ipynb)
 - [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
 - [Check if column exists](notebooks/column_exists.ipynb)
@@ -39,6 +38,7 @@ I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to
 
 - [Find rows with null values in any column](notebooks/find_null_values_in_any_column.ipynb)
 - [Find all cells with zero values](notebooks/find_all_cells_with_zero_value.ipynb)
+- [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 
 ### Filter a Series
 
