@@ -1,0 +1,114 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.6.0
+  kernelspec:
+    display_name: python-data-cheatsheet
+    language: python
+    name: python-data-cheatsheet
+---
+
+# Select all the contents of a MultiIndex level
+
+## tl;dr: Use `slice(None)` or `pandas.IndexSlice`
+
+`results.loc[(slice(None), slice(None), "Ballots Cast"), :]`
+
+or
+
+`results.loc[pd.IndexSlice[:, :, "Ballots Cast"], :]`
+
+## Introduction
+
+Pandas [`MultiIndex`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.html) provides a useful way to [select specific values](https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html) in a `DataFrame` when the data is hierarchical. I find myself using `MultiIndex` often when working with election data where a value might be associated with a county, jurisdiction and ultimately precinct.
+
+It's intuitive to traverse the hierarchy to get slices of data, but it's a less intuitive when you want to get specific values for the second level of the index, for any value of the first level.
+
+The official reference for accessing items in a MultiIndex is the [MultiIndex / advanced indexing](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) section of the Pandas documentation. 
+
+```{python}
+# Setup
+
+import io
+
+import pandas as pd
+```
+
+## Load Alcona County, Michigan Election Results
+
+This is a subset of data available at https://github.com/openelections/openelections-data-mi/blob/master/2020/20200310__mi__primary__president__alcona__precinct.csv.
+
+```{python}
+results_csv = """county,precinct,office,district,party,candidates,votes
+Alcona,Alcona Twp,Registered Voters,,,,975
+Alcona,Caledonia Twp,Registered Voters,,,,955
+Alcona,Curtis Twp,Registered Voters,,,,1024
+Alcona,Greenbush Twp,Registered Voters,,,,1257
+Alcona,Gustin Twp,Registered Voters,,,,637
+Alcona,Harrisville Twp,Registered Voters,,,,1144
+Alcona,Hawes Twp,Registered Voters,,,,943
+Alcona,Haynes Twp,Registered Voters,,,,645
+Alcona,Mikado Twp,Registered Voters,,,,785
+Alcona,Millen Twp,Registered Voters,,,,363
+Alcona,Mitchell Twp,Registered Voters,,,,354
+Alcona,City Harrisville,Registered Voters,,,,381
+Alcona,Alcona Twp,Ballots Cast,,,,276
+Alcona,Caledonia Twp,Ballots Cast,,,,242
+Alcona,Curtis Twp,Ballots Cast,,,,281
+Alcona,Greenbush Twp,Ballots Cast,,,,324
+Alcona,Gustin Twp,Ballots Cast,,,,121
+Alcona,Harrisville Twp,Ballots Cast,,,,298
+Alcona,Hawes Twp,Ballots Cast,,,,186
+Alcona,Haynes Twp,Ballots Cast,,,,166
+Alcona,Mikado Twp,Ballots Cast,,,,195
+Alcona,Millen Twp,Ballots Cast,,,,96
+Alcona,Mitchell Twp,Ballots Cast,,,,87
+""" 
+
+results = pd.read_csv(io.StringIO(results_csv))
+
+results
+```
+
+## Create a MultiIndex
+
+```{python}
+results = results.set_index(["county", "precinct", "office"])
+
+results
+```
+
+## Use `slice(None)` to select any value at a particular level of the MultiIndex
+
+Let's say we want to get values for "Ballots Cast", for any county or precinct. We can use `.loc` and specify `slice(None)` for the levels of the index for which we want to get any value.
+
+Before we do this, it might be useful to recall how to get a single value using `.loc` and a MultiIndex.
+
+```{python}
+results.loc[("Alcona", "Caledonia Twp", "Ballots Cast")]
+```
+
+To get all values for the "Ballots Cast" "office", we'll specify `slice(None)` for the `county` and `precinct` levels.
+
+```{python}
+results.loc[(slice(None), slice(None), "Ballots Cast"), :]
+```
+
+## Or, use `pandas.IndexSlice`
+
+Instead of using `slice(None)` we can use [pandas.IndexSlice ](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.IndexSlice.html#pandas.IndexSlice) to use a syntax similar to how you would slice an array.
+
+```{python}
+idx = pd.IndexSlice
+
+results.loc[idx[:, :, "Ballots Cast"], :]
+```
+
+```{python}
+
+```
