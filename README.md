@@ -34,10 +34,11 @@ I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to
 - [Format values in a DataFrame](noteboos/format_values.ipynb)
 - [List columns](notebooks/list_columns.ipynb)
 
-## Filtering data
+## Filtering, subsetting and indexing data
 
 - [Find rows with null values in any column](notebooks/find_null_values_in_any_column.ipynb)
 - [Find all cells with zero values](notebooks/find_all_cells_with_zero_value.ipynb)
+- [Select all the contents of a MultiIndex level](notebooks/multiindex_slice.ipynb)
 - [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 
 ### Filter a Series
