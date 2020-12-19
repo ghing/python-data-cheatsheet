@@ -41,6 +41,7 @@ I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to
 - [Select all the contents of a MultiIndex level](notebooks/multiindex_slice.ipynb)
 - [Select a single item by index](notebooks/select_single_item_by_index.ipynb)
 - [Get consecutive pairs from an interable](notebooks/consecutive_pairs_iterable.ipynb)
+- [Select a set of items by a list of index values](notebooks/select_multiple_items_by_index.ipynb)
 
 ### Filter a Series
 
