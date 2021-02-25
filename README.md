@@ -219,7 +219,7 @@ df.groupby(['col1','col2']).size()
 
 ## Jupyter notebooks
 
-- [Hide cells in HTML output of notebook](hide_cells_jupyter_html.ipynb)
+- [Hide cells in HTML output of notebook](notebooks/hide_cells_jupyter_html.ipynb)
 
 ### Render a Python variable in a Markdown cell
 
