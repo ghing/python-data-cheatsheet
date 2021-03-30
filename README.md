@@ -14,6 +14,26 @@ TODO: Break quick inline examples into individual notebooks.
 - [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
 - Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
 
+### Loading the results of a Spatialite spatial query
+
+You need to make sure you have Python compiled with the ability to load extensions:
+
+```
+CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.7.4
+```
+
+After making your database connection, you need to load the spatialite extension:
+
+```
+import sqlite3
+
+con = sqlite3.connect("spatial_data.db")
+con.enable_load_extension(True)
+con.load_extension('mod_spatialite')
+```
+
+Sources: [Python sqlite3.Connection object has no attribute 'enable_load_extension](https://code.luasoftware.com/tutorials/python/python-sqlite3-connection-objecthas-no-attribute-enable-load-extension/) (Lua Software Code)
+
 ### Geocoding addresses
 
 I usually first pass the addresses through the Census Geocoder Batch API and then geocode the addresses that it can't handle using Geocodio. 
