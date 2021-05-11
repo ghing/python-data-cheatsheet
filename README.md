@@ -19,7 +19,13 @@ TODO: Break quick inline examples into individual notebooks.
 You need to make sure you have Python compiled with the ability to load extensions:
 
 ```
-CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.7.4
+CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.9.4
+```
+
+If you installed sqlite3 on a Mac using Homebrew, you might also have to point to the Homebrew versions of the libraries:
+
+```
+LDFLAGS="-L/usr/local/opt/sqlite/lib" CPPFLAGS="-I/usr/local/opt/sqlite/include" CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.9.4
 ```
 
 After making your database connection, you need to load the spatialite extension:
