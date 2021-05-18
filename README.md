@@ -309,6 +309,14 @@ pipenv run python -m ipykernel install --user --name=your-project-slug
 
 Source: [associatedpress/cookiecutter-python-project](https://github.com/associatedpress/cookiecutter-python-project/blob/master/hooks/post_gen_project.sh)
 
+### Integrating code formatters and linters into your coding workflow
+
+In many projects, I use [Black](https://black.readthedocs.io/en/stable/) to format my source code and [pylint](https://www.pylint.org/) to check my code for both formatting issues and things that could cause errors or make my code more difficult to read and update.
+
+There are ways to integrate these tools into your editor, such as [vim](https://github.com/dense-analysis/ale/blob/master/supported-tools.md) or Visual Studio Code. However, I've found a good universal way to approach this is to install them as git hooks that run when trying to commit code. To do this, I use the [pre-commit](https://pre-commit.com/) framework.
+
+I've put an example [`.pre-commit-config.yml`](.pre-commit-config.yml) file that runs Black and pylint in this repo.
+
 ## Data sources
 
 These are the data sources used as example data in this project.

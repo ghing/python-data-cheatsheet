@@ -12,5 +12,6 @@ altair = "*"
 ipykernel = "*"
 
 [dev-packages]
+pre-commit = "*"
 
 [requires]
