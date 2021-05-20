@@ -317,6 +317,18 @@ There are ways to integrate these tools into your editor, such as [vim](https://
 
 I've put an example [`.pre-commit-config.yml`](.pre-commit-config.yml) file that runs Black and pylint in this repo.
 
+### Listing the path to a virtual environment created with Pipenv
+
+```pipenv --venv```
+
+### Specifying the Python environment used by Visual Studio code
+
+This is important if you're running pylint on a particular project using VS Code integration and want to make sure it detects the packages installed in your project virtual environment.
+
+To select a specific environment, use the Python: Select Interpreter command from the Command Palette (⇧⌘P on Mac). If the environment you want isn't listed, you can enter a full path to the Python executable.
+
+Source: [Using Python Environments in Visual Studio Code](https://code.visualstudio.com/docs/python/environments)
+
 ## Data sources
 
 These are the data sources used as example data in this project.
