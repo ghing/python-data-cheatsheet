@@ -342,3 +342,17 @@ This will be for examples of working with GeoPandas and Spatialite.
 - Chicago Neighborhood Boundaries
   - Agency: City of Chicago
   - URL: https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9
+
+## Installation of this project for local development
+
+I've used the [Jupytext](https://github.com/mwouts/jupytext/) Jupyter Lab extension to create "paired" .Rmd versions of the notebooks in this repository.
+
+This was mostly because the git diffs for the Rmd files more clearly show the changes between versions. There may be other, potentially preferable ways to do this in 2021. I also just wanted to experiment with Jupytext.
+
+You'll need to install this extension in the same environment as your Jupyter lab.
+
+For me, since I installed Jupyter Lab using pipx, this looks like:
+
+```
+pipx inject jupyterlab jupytext
+```
