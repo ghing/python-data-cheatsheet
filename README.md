@@ -38,7 +38,16 @@ con.enable_load_extension(True)
 con.load_extension('mod_spatialite')
 ```
 
-Sources: [Python sqlite3.Connection object has no attribute 'enable_load_extension](https://code.luasoftware.com/tutorials/python/python-sqlite3-connection-objecthas-no-attribute-enable-load-extension/) (Lua Software Code)
+Once you've created the connection object like this, you can [`geopandas.GeoDataFrame.from_postgis()`](https://geopandas.org/docs/reference/api/geopandas.GeoDataFrame.from_postgis.html#geopandas.GeoDataFrame.from_postgis) to query the database.
+
+Note that you have to do some conversion on the data in the geometry column. Geopandas also expects the column to be named `geom` (though you can override this). You may also need to specify the coordinate reference system (CRS) using the `crs` argument.
+
+```
+gpd.read_postgis("SELECT name, Hex(ST_AsBinary(geometry)) as geom FROM parcels LIMIT 5", con=con)
+```
+
+Sources: [Python sqlite3.Connection object has no attribute 'enable_load_extension](https://code.luasoftware.com/tutorials/python/python-sqlite3-connection-objecthas-no-attribute-enable-load-extension/) (Lua Software Code), [Loading spatialite tables into GeoPandas GeoDataFrames](https://gist.github.com/perrygeo/868135514d2518257bbb)
+
 
 ### Geocoding addresses
 
