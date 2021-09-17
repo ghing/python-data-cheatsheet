@@ -251,6 +251,7 @@ df.groupby(['col1','col2']).size()
 ## Visualizing data
 
 - [Coloring a choropleth based on an explicit color value in a GeoDataFrame](notebooks/color_choropleth_explicitly.ipynb)
+- [Showing a layer of points over a layer of polygons in Altair](https://altair-viz.github.io/altair-tutorial/notebooks/09-Geographic-plots.html#points-on-background) (Altair Tutorial)
 
 ## Jupyter notebooks
 
