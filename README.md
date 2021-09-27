@@ -339,6 +339,26 @@ To select a specific environment, use the Python: Select Interpreter command fro
 
 Source: [Using Python Environments in Visual Studio Code](https://code.visualstudio.com/docs/python/environments)
 
+### Executing a Jupyter notebook from the command line.
+
+Use `nbconvert` to execute the notebook:
+
+```
+jupyter nbconvert --to notebook --execute mynotebook.ipynb
+```
+
+I haven't run that particular version of the command in a while, but I think that either overwrites the input notebook or creates a similarly-named copy. Since I usually want an HTML version, similar to how RStudio automatically creates an HTML version of RMarkdown notebooks, I usually use a somewhat different set of parameters:
+
+```
+jupyter nbconvert \
+	  --to html \
+	  --output notebook.nb.html \
+	  --execute \
+	  notebook.ipynb
+```
+
+Source: [Executing notebooks from the command line](https://nbconvert.readthedocs.io/en/latest/execute_api.html#executing-notebooks-from-the-command-line)
+
 ## Data sources
 
 These are the data sources used as example data in this project.
