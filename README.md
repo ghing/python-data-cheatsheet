@@ -153,6 +153,8 @@ Out[4]:
 
 [This StackOverflow answer](https://stackoverflow.com/a/28648923/386210) offers a good rundown of options.
 
+[Overview of Pandas Data Types](https://pbpython.com/pandas_dtypes.html) has a rundown of the different data types, and their relationship to Numpy types and Python types.
+
 ### Find and replace across an entire dataframe
 
 Use `pandas.DataFrame.replace()`
