@@ -291,6 +291,18 @@ some_function()
 some_function()
 ```
 
+### Sharing code and variables between notebooks
+
+The best way of doing this depends on what you're trying to do.
+
+For passing tabular data, I like to write Pandas `DataFrame`s to [Feather files](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_feather.html) because they can be read by R programs/notebooks, are faster to read in than CSV or Pickle files and preserve data types. I store these in a conventional file structure. That way, one notebook can read in the `DataFrame` written by another notebook. Sometimes I'll reference the file paths with a variable in a project-level settings module, so if the file name/organization changes, I don't have to update my code in a bunch of places.
+
+For individual variables, there is the [store magic](https://ipython.readthedocs.io/en/stable/config/extensions/storemagic.html).
+
+For code and (possibly) values, there are (somewhat complicated) [methods for importing notebooks as modules](https://ipython.readthedocs.io/en/stable/config/extensions/storemagic.html).
+
+TODO: Experiment with store magic and importing notebooks as modules and perhaps make some example notebooks. 
+
 ## Python environment
 
 ### Installing Python in a good way
