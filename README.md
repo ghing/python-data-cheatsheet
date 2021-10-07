@@ -326,6 +326,20 @@ For code and (possibly) values, there are (somewhat complicated) [methods for im
 
 TODO: Experiment with store magic and importing notebooks as modules and perhaps make some example notebooks. 
 
+### Show all rows of a Pandas `DataFrame` or `Series`
+
+Use [`IPython.display.display()`](https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html#IPython.display.display) and [`pandas.option_context()`](https://pandas.pydata.org/docs/reference/api/pandas.option_context.html#pandas.option_context).
+
+You can also set the [Pandas options](https://pandas.pydata.org/pandas-docs/stable/user_guide/options.html) globally, but I've almost always wanted to do this on a case-by-case basis, which is what `pandas.option_context()` lets you do.
+
+```
+from IPython.display import display
+import pandas as pd
+
+with pd.option_context("display.max_rows", None):
+    display(long_df)
+```
+
 ## Python environment
 
 ### Installing Python in a good way
