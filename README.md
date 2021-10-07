@@ -318,6 +318,10 @@ TODO: Experiment with store magic and importing notebooks as modules and perhaps
 
 [My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/) is a good guide. I prefer to use Pipenv instead of Poetry because `pipenv run` automatically sources `.env` files.
 
+[Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) is a GUI application for installing Python in a way that's similar to my setup. Even if you don't use it to install Python, it's useful for seeing all the different versions of Python that end up on your system.
+
+I've never found much extra utility in using Anaconda, but it does offer one big benefit: it installs useful packages for working with data, like Pandas and Jupyter, all in one installation process, instead of installing them one at a time with pip or Pipenv. 
+
 ### Use a particular Python version with Pipenv
 
 ```
