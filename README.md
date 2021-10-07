@@ -241,6 +241,15 @@ removals_inactive_migration['removed_inactive_rate_q'] = pd.qcut(
 
 Use `DataFrame.assign()`
 
+### Dealing with the "Geometry is in a geographic CRS. Results form 'area' are likely incorrect." warning in GeoPandas
+
+When you're trying to find the [area](https://geopandas.org/docs/reference/api/geopandas.GeoSeries.area.html) of a geometry column of a GeoPandas `GeoDataFrame`, you may encounter this error:  
+
+> Geometry is in a geographic CRS. Results from 'area' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+
+The message tells you what you need to do, but doesn't explain the issue.
+
+[Map Projection and Coordinate Reference Systems](https://zia207.github.io/geospatial-python.io/lesson_03_pojection_coordinate_reference_system.html) has an explaination of the difference between geographic coordinate reference systems and projected ones, as well as Python code, using GeoPandas, that shows how to reproject. Moreover, it offers some suggestions for which projected CRS to use. tl;dr, if you're working with spatial data that spans the US, Albers Equal Area Conici (EPSG = 5070 or 102003) is a good choice.
 
 ## Aggregating data
 
