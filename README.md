@@ -251,6 +251,12 @@ The message tells you what you need to do, but doesn't explain the issue.
 
 [Map Projection and Coordinate Reference Systems](https://zia207.github.io/geospatial-python.io/lesson_03_pojection_coordinate_reference_system.html) has an explaination of the difference between geographic coordinate reference systems and projected ones, as well as Python code, using GeoPandas, that shows how to reproject. Moreover, it offers some suggestions for which projected CRS to use. tl;dr, if you're working with spatial data that spans the US, Albers Equal Area Conici (EPSG = 5070 or 102003) is a good choice.
 
+### Parsing addresses
+
+Address data can be messy in a way that makes parsing addresses yourself difficult. I recommend using the [usaddress](https://github.com/datamade/usaddress) package, which uses a statistical model to try to parse components from addresses.
+
+If you don't want to use the Python library, they have a [web interface](https://parserator.datamade.us/usaddress/) that lets you parse sets of 500 addresses.
+
 ## Aggregating data
 
 ### Count number of items in a group
