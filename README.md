@@ -148,6 +148,7 @@ Out[4]:
 
 - [Combine records when information is split across rows](notebooks/combine_record_rows.ipynb)
 - [Split a DataFrame into chunks](notebooks/chunk_dataframe.ipynb)
+- [Add row numbers to a DataFrame](notebooks/add_row_numbers.ipynb)
 
 ### Change types of columns
 
