@@ -383,6 +383,12 @@ There are ways to integrate these tools into your editor, such as [vim](https://
 
 I've put an example [`.pre-commit-config.yml`](.pre-commit-config.yml) file that runs Black and pylint in this repo.
 
+### Tell pylint to ignore a rule
+
+To disable a rule for a signle line, add a comment like `# pylint: disable=wildcard-import, method-hidden` to the end of the line.
+
+Source: [How to disable a particular message?](https://pylint.pycqa.org/en/latest/faq.html#how-to-disable-a-particular-message)
+
 ### Listing the path to a virtual environment created with Pipenv
 
 ```pipenv --venv```
