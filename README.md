@@ -343,6 +343,8 @@ with pd.option_context("display.max_rows", None):
 
 ## Python environment
 
+- [Using a project-level settings module][notebooks/project_settings_module.ipynb]
+
 ### Installing Python in a good way
 
 [My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/) is a good guide. I prefer to use Pipenv instead of Poetry because `pipenv run` automatically sources `.env` files.
