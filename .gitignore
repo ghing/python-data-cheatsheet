@@ -1,6 +1,9 @@
 # OS artifacts
 .DS_Store
 
+# Credentials
+.env
+
 # Programming environment artifacts
 .ipynb_checkpoints
 *.swp
