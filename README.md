@@ -437,6 +437,18 @@ This will be for examples of working with GeoPandas and Spatialite.
   - Agency: City of Chicago
   - URL: https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Neighborhoods/bbvz-uum9
 
+- County boundaries, 2021
+  - Agency: U.S. Census Bureau
+  - URL: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
+- American Indian/Alaska Native/Native Hawaiian Area boundaries, 2021
+  - Agency: U.S. Census Bureau
+  - URL: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
+- Census Places, 2021  
+  - Agency: U.S. Census Bureau
+  - URL: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
 ## Installation of this project for local development
 
 I've used the [Jupytext](https://github.com/mwouts/jupytext/) Jupyter Lab extension to create "paired" .Rmd versions of the notebooks in this repository.

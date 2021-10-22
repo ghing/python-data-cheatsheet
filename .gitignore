@@ -10,3 +10,8 @@
 
 # Generated data
 data/tmp
+
+# Source data that can be easily downloaded
+data/source/tl_2021_04_place.zip
+data/source/tl_2021_us_aiannh.zip
+data/source/tl_2021_us_county.zip
