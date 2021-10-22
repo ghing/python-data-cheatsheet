@@ -24,9 +24,10 @@ Source: [Reading and Writing Files — GeoPandas 0.9.0 documentation](https://ge
 
 from pathlib import Path
 
-NOTEBOOK_DIR = Path.cwd()
-DATA_DIR = (NOTEBOOK_DIR.parent / "data").absolute()
-DATA_DIR_SRC = DATA_DIR / "src"
+# Local settings module
+# I use this to build paths to data files.
+# See project_settings_module.ipynb for more on this method.
+import settings
 ```
 
 ## Load the shapefile
@@ -54,14 +55,14 @@ This file lives in `data/src/grand_blvd.zip`, relative to the root directory of 
 Within the zip file, there is a subdirectory named `grand_blvd`, which contains the shapefile `grand_blvd.shp`.
 
 ```{python}
-# !zipinfo ../data/src/grand_blvd.zip
+# !zipinfo ../data/source/grand_blvd.zip
 ```
 
 For this scenario, the argument to `gpd.read_file()` would be this:
 
 ```{python}
 # Path to zipped shapefile
-zipfile_path = DATA_DIR_SRC / "grand_blvd.zip"
+zipfile_path = settings.DATA_DIR_SRC / "grand_blvd.zip"
 # Path to shapefile within archive
 shapefile_path = Path("grand_blvd") / "grand_blvd.shp"
 
