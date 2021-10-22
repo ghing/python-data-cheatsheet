@@ -13,6 +13,7 @@ TODO: Break quick inline examples into individual notebooks.
 - [Loading a DataFrame into a temporary table of a SQL database](notebooks/sql_temporary_table.ipynb)
 - [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
 - Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
+- [Download a file with a progress bar](notebooks/geopandas_shapely_binary_predicates.ipynb): This also shows how to only download a file if it hasn't already been downloaded.
 
 ### Loading the results of a Spatialite spatial query
 
@@ -149,6 +150,9 @@ Out[4]:
 - [Combine records when information is split across rows](notebooks/combine_record_rows.ipynb)
 - [Split a DataFrame into chunks](notebooks/chunk_dataframe.ipynb)
 - [Add row numbers to a DataFrame](notebooks/add_row_numbers.ipynb)
+- [GeoPandas and Shapely binary predicates](notebooks/geopandas_shapely_binary_predicates.ipynb): Understand the meaning of the different operations used when doing spatial joins in GeoPandas.
+- [Get the border of a polygon feature as a line feature](notebooks/geopandas_shapely_binary_predicates.ipynb)
+- [Break a multi-polygon in one row of a GeoDataFrame into multiple rows for each polygon](notebooks/geopandas_shapely_binary_predicates.ipynb)
 
 ### Change types of columns
 
@@ -278,6 +282,7 @@ df.groupby(['col1','col2']).size()
 
 - [Coloring a choropleth based on an explicit color value in a GeoDataFrame](notebooks/color_choropleth_explicitly.ipynb)
 - [Showing a layer of points over a layer of polygons in Altair](https://altair-viz.github.io/altair-tutorial/notebooks/09-Geographic-plots.html#points-on-background) (Altair Tutorial)
+- [Quickly plotting multiple GeoPandas geometries](notebooks/geopandas_shapely_binary_predicates.ipynb)
 
 ## Jupyter notebooks
 
