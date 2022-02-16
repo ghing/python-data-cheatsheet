@@ -273,6 +273,7 @@ I find [Pythex](https://pythex.org/) to be a really useful sandbox for testing o
 ## Aggregating data
 
 - [Count number of items in a group](notebooks/count_items_in_group.ipynb)
+- [Count unique values within a group](notebooks/count_unique_values_within_group.ipynb)
 
 ## Visualizing data
 
