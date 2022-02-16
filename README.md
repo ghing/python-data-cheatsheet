@@ -272,11 +272,7 @@ I find [Pythex](https://pythex.org/) to be a really useful sandbox for testing o
 
 ## Aggregating data
 
-### Count number of items in a group
-
-```
-df.groupby(['col1','col2']).size()
-```
+- [Count number of items in a group](notebooks/count_items_in_group.ipynb)
 
 ## Visualizing data
 
