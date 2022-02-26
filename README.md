@@ -67,7 +67,7 @@ I put a sample script in `scripts/geocode_data.py`. Note that I haven't tried to
 - [Length of a DataFrame](notebooks/length_of_dataframe.ipynb)
 - [Check if column exists](notebooks/column_exists.ipynb)
 - [Show all columns](notebooks/show_all_columns.ipynb)
-- [Format values in a DataFrame](noteboos/format_values.ipynb)
+- [Format values in a DataFrame](noteboos/format_values.ipynb), including how to specify different formats for different columns and rows.
 - [List columns](notebooks/list_columns.ipynb)
 
 ## Filtering, subsetting and indexing data
