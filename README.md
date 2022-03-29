@@ -8,7 +8,6 @@ TODO: Break quick inline examples into individual notebooks.
 
 - [Basic loops and related concepts](notebooks/looping.ipynb): `for` and `while` loops, looping over a range of numbers, using enumerate() to access both the item and the index inside a loop, unpacking tuples and lists and exiting early from a loop.
 
-
 ## Loading and creating data
 
 - [Converting multiple columns to categories](notebooks/converting_multiple_columns_to_categories.ipynb)
@@ -19,6 +18,7 @@ TODO: Break quick inline examples into individual notebooks.
 - [Read shapefile from zip](notebooks/read_shapefile_from_zip.ipynb)
 - Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
 - [Download a file with a progress bar](notebooks/geopandas_shapely_binary_predicates.ipynb): This also shows how to only download a file if it hasn't already been downloaded.
+- [Writing a DataFrame to an Excel workbook](notebooks/pandas_excel.ipynb): Writing multiple `DataFrame`s to different worksheets, sizing columns to fit data and setting wrapping on cells.
 
 ### Loading the results of a Spatialite spatial query
 
