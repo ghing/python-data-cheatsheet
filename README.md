@@ -4,6 +4,11 @@ Things in Python, Pandas, GeoPandas and Jupyter that I've had to look up or were
 
 TODO: Break quick inline examples into individual notebooks.
 
+## Basic flow control
+
+- [Basic loops and related concepts](notebooks/looping.ipynb): `for` and `while` loops, looping over a range of numbers, using enumerate() to access both the item and the index inside a loop, unpacking tuples and lists and exiting early from a loop.
+
+
 ## Loading and creating data
 
 - [Converting multiple columns to categories](notebooks/converting_multiple_columns_to_categories.ipynb)
