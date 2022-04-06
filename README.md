@@ -351,7 +351,8 @@ with pd.option_context("display.max_rows", None):
 
 ## Python environment
 
-- [Using a project-level settings module][notebooks/project_settings_module.ipynb]
+- [Using a project-level settings module](notebooks/project_settings_module.ipynb)
+- [Install GeoPandas on Windows](notebooks/install_geopandas_windows.ipynb)
 
 ### Installing Python in a good way
 
