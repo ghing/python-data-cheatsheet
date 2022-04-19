@@ -15,6 +15,7 @@ tqdm = "*"
 ipywidgets = "*"
 rtree = "*"
 openpyxl = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 pre-commit = "*"
