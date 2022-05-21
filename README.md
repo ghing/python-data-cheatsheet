@@ -333,6 +333,8 @@ For individual variables, there is the [store magic](https://ipython.readthedocs
 
 For code and (possibly) values, there are (somewhat complicated) [methods for importing notebooks as modules](https://ipython.readthedocs.io/en/stable/config/extensions/storemagic.html).
 
+[Joe Germuska](https://twitter.com/JoeGermuska) suggests using the [`%run` magic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-run) for executing a Python script (or, apparently, another notebook) from within a notebook. The interactive namespace gets updated with all variables defined in the program. Joe says this is useful for boostrapping notebooks that share common initialization.
+
 TODO: Experiment with store magic and importing notebooks as modules and perhaps make some example notebooks. 
 
 ### Show all rows of a Pandas `DataFrame` or `Series`
