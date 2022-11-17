@@ -125,6 +125,7 @@ Out[4]:
 - [GeoPandas and Shapely binary predicates](notebooks/geopandas_shapely_binary_predicates.ipynb): Understand the meaning of the different operations used when doing spatial joins in GeoPandas.
 - [Get the border of a polygon feature as a line feature](notebooks/geopandas_shapely_binary_predicates.ipynb)
 - [Break a multi-polygon in one row of a GeoDataFrame into multiple rows for each polygon](notebooks/geopandas_shapely_binary_predicates.ipynb)
+- [Pivot values in rows into separate columns](notebooks/pivot_rows_into_columns.ipynb): Get one row per unique ID by putting values from multiple rows into multiple columns like `col`, `col_2`, `col_3`, ...
 
 ### Change types of columns
 
