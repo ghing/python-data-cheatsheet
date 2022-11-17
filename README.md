@@ -19,40 +19,7 @@ TODO: Break quick inline examples into individual notebooks.
 - Create spatial data (a Geopandas GeoDataFrame) from a CSV with coordinates: [From CSV to GeoDataFrame in two lines](https://anitagraser.com/2019/01/23/from-csv-to-geodataframe-in-two-lines/)
 - [Download a file with a progress bar](notebooks/geopandas_shapely_binary_predicates.ipynb): This also shows how to only download a file if it hasn't already been downloaded.
 - [Writing a DataFrame to an Excel workbook](notebooks/pandas_excel.ipynb): Writing multiple `DataFrame`s to different worksheets, sizing columns to fit data and setting wrapping on cells.
-
-### Loading the results of a Spatialite spatial query
-
-You need to make sure you have Python compiled with the ability to load extensions:
-
-```
-CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.9.4
-```
-
-If you installed sqlite3 on a Mac using Homebrew, you might also have to point to the Homebrew versions of the libraries:
-
-```
-LDFLAGS="-L/usr/local/opt/sqlite/lib" CPPFLAGS="-I/usr/local/opt/sqlite/include" CONFIGURE_OPTS=--enable-loadable-sqlite-extensions pyenv install 3.9.4
-```
-
-After making your database connection, you need to load the spatialite extension:
-
-```
-import sqlite3
-
-con = sqlite3.connect("spatial_data.db")
-con.enable_load_extension(True)
-con.load_extension('mod_spatialite')
-```
-
-Once you've created the connection object like this, you can [`geopandas.GeoDataFrame.from_postgis()`](https://geopandas.org/docs/reference/api/geopandas.GeoDataFrame.from_postgis.html#geopandas.GeoDataFrame.from_postgis) to query the database.
-
-Note that you have to do some conversion on the data in the geometry column. Geopandas also expects the column to be named `geom` (though you can override this). You may also need to specify the coordinate reference system (CRS) using the `crs` argument.
-
-```
-gpd.read_postgis("SELECT name, Hex(ST_AsBinary(geometry)) as geom FROM parcels LIMIT 5", con=con)
-```
-
-Sources: [Python sqlite3.Connection object has no attribute 'enable_load_extension](https://code.luasoftware.com/tutorials/python/python-sqlite3-connection-objecthas-no-attribute-enable-load-extension/) (Lua Software Code), [Loading spatialite tables into GeoPandas GeoDataFrames](https://gist.github.com/perrygeo/868135514d2518257bbb)
+- [Loading the results of a Spatialite spatial query](notebooks/load_spatialite_query_results.ipynb)
 
 
 ### Geocoding addresses
