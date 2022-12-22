@@ -323,6 +323,7 @@ with pd.option_context("display.max_rows", None):
 
 - [Using a project-level settings module](notebooks/project_settings_module.ipynb)
 - [Install GeoPandas on Windows](notebooks/install_geopandas_windows.ipynb)
+- [Executing a Jupyter notebook from the command line](notebooks/executing_jupyter_notebook_command_line.ipynb)
 
 ### Installing Python in a good way
 
@@ -381,26 +382,6 @@ This is important if you're running pylint on a particular project using VS Code
 To select a specific environment, use the Python: Select Interpreter command from the Command Palette (⇧⌘P on Mac). If the environment you want isn't listed, you can enter a full path to the Python executable.
 
 Source: [Using Python Environments in Visual Studio Code](https://code.visualstudio.com/docs/python/environments)
-
-### Executing a Jupyter notebook from the command line.
-
-Use `nbconvert` to execute the notebook:
-
-```
-jupyter nbconvert --to notebook --execute mynotebook.ipynb
-```
-
-I haven't run that particular version of the command in a while, but I think that either overwrites the input notebook or creates a similarly-named copy. Since I usually want an HTML version, similar to how RStudio automatically creates an HTML version of RMarkdown notebooks, I usually use a somewhat different set of parameters:
-
-```
-jupyter nbconvert \
-	  --to html \
-	  --output notebook.nb.html \
-	  --execute \
-	  notebook.ipynb
-```
-
-Source: [Executing notebooks from the command line](https://nbconvert.readthedocs.io/en/latest/execute_api.html#executing-notebooks-from-the-command-line)
 
 ## Data sources
 
