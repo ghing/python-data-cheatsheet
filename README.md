@@ -126,6 +126,7 @@ Out[4]:
 - [Get the border of a polygon feature as a line feature](notebooks/geopandas_shapely_binary_predicates.ipynb)
 - [Break a multi-polygon in one row of a GeoDataFrame into multiple rows for each polygon](notebooks/geopandas_shapely_binary_predicates.ipynb)
 - [Pivot values in rows into separate columns](notebooks/pivot_rows_into_columns.ipynb): Get one row per unique ID by putting values from multiple rows into multiple columns like `col`, `col_2`, `col_3`, ...
+- [Use a script to clean data](scripts/scripts/process_section_1115_eligibility_changes.py)
 
 ### Change types of columns
 
@@ -408,6 +409,9 @@ This will be for examples of working with GeoPandas and Spatialite.
 - Census Places, 2021  
   - Agency: U.S. Census Bureau
   - URL: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+
+- Section 1115 Eligibility Changes - Expanded Eligibility Groups - Justice-Involved
+  - URL: https://datawrapper.dwcdn.net/HhnNo/52/
 
 ## Installation of this project for local development
 
