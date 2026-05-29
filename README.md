@@ -328,9 +328,11 @@ with pd.option_context("display.max_rows", None):
 
 ### Installing Python in a good way
 
-[My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/) is a good guide. I prefer to use Pipenv instead of Poetry because `pipenv run` automatically sources `.env` files.
+In 2026, I use [uv](https://docs.astral.sh/uv/).
 
-[Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) is a GUI application for installing Python in a way that's similar to my setup. Even if you don't use it to install Python, it's useful for seeing all the different versions of Python that end up on your system.
+In the past, I found [My Python Development Environment, 2020 Edition](https://jacobian.org/2019/nov/11/python-environment-2020/) is a good guide. In the past, I preferred to use Pipenv instead of Poetry because `pipenv run` automatically sources `.env` files.
+
+I don't know if it's updated, but [Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) is a GUI application for installing Python in a way that's similar to my pre-uv setup. Even if you don't use it to install Python, it's useful for seeing all the different versions of Python that end up on your system.
 
 I've never found much extra utility in using Anaconda, but it does offer one big benefit: it installs useful packages for working with data, like Pandas and Jupyter, all in one installation process, instead of installing them one at a time with pip or Pipenv. 
 
@@ -353,7 +355,7 @@ Source: [Starting python debugger automatically on error](https://stackoverflow.
 This makes it possible to have a single Jupyter Lab installation with separate kernels for the virtualenvs for each project. 
 
 ```
-pipenv run python -m ipykernel install --user --name=your-project-slug
+uv run python -m ipykernel install --user --name=your-project-slug
 ```
 
 Source: [associatedpress/cookiecutter-python-project](https://github.com/associatedpress/cookiecutter-python-project/blob/master/hooks/post_gen_project.sh)
